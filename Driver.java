@@ -4,7 +4,7 @@ public class Driver {
     
     public static String input(String message){
         Scanner reader = new Scanner(System.in);
-        System.out.println(message);
+        System.out.print(message);
         return reader.nextLine();
     }
     
@@ -19,6 +19,12 @@ public class Driver {
             System.out.print(library);
         else if(command[0].equals("remove"))
             library.remove(command[1]);
+        else if(command[0].equals("take"))
+            library.take(command[1]);
+        else if(command[0].equals("return"))
+            library.putBack(command[1]);
+        else if(command[0].equals("sort"))
+            library.sort();
         else if(command[0].equals("quit"))
             System.exit(0);
         else

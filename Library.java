@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Library {
     
@@ -17,12 +18,25 @@ public class Library {
     }
     public void remove(String s){
         Book deletedBook = null;
-        for(Book b : books){
+        for(Book b : books)
             if(b.getTitle().equals(s))
                 deletedBook = b;
-        }
         books.remove(deletedBook);
-        
+    }
+    public void sort(){
+        Collections.sort(books);
+    }
+    
+    public void take(String s){
+        for(Book b : books)
+            if(b.getTitle().equals(s))
+                b.take();
+    }
+    
+    public void putBack(String s){
+        for(Book b : books)
+            if(b.getTitle().equals(s))
+                b.putBack();
     }
     
     private void saveToFile(){
