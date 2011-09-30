@@ -39,7 +39,7 @@ public class Library {
                 b.putBack();
     }
     
-    private void saveToFile(){
+    public void save(){
          try {
             BufferedWriter out = new BufferedWriter(new FileWriter("db.txt"));
             for(Book b : books)
@@ -55,10 +55,10 @@ public class Library {
         books = new ArrayList<Book>();
         try{ 
             Scanner reader = new Scanner(new File("db.txt"));
-            reader.useDelimiter(", ");
+            reader.useDelimiter(",");
         
              while(reader.hasNext())
-                books.add(new Book(reader.nextLine()));  
+                books.add(new Book(reader.next()));  
         }
         catch(IOException e){
             System.out.println("Unable to read file. " + e.getMessage());

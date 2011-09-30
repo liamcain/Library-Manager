@@ -25,6 +25,8 @@ public class Driver {
             library.putBack(command[1]);
         else if(command[0].equals("sort"))
             library.sort();
+        else if(command[0].equals("save"))
+            library.save();       
         else if(command[0].equals("quit"))
             System.exit(0);
         else
